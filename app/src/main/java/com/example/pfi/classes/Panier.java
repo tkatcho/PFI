@@ -16,19 +16,46 @@ public class Panier implements Serializable {
 
     // Methods to manipulate the products in the cart
     public void ajouterProduit(Produit produit, int quantite) {
-        produits.add(new Pair<>(produit, quantite));
-        prixTotal += produit.getPrix() * quantite;
+        // Check if the requested quantity is available
+        if (quantite > 0 && quantite <= produit.getQuantite()) {
+            produits.add(new Pair<>(produit, quantite));
+            prixTotal += produit.getPrix() * quantite;
+        } else {
+            System.out.println("Error: Insufficient quantity available for product " + produit.getNom());
+        }
     }
 
     public void retirerProduit(Produit produit, int quantite) {
-        produits.removeIf(pair -> pair.getFirst().equals(produit) && pair.getSecond() == quantite);
-        prixTotal -= produit.getPrix() * quantite;
+        // Check if the requested quantity is valid
+        if (quantite > 0) {
+            // Find the Pair in the list that matches the specified product and quantity
+            for (Pair<Produit, Integer> pair : produits) {
+                if (pair.getFirst().equals(produit) && pair.getSecond() == quantite) {
+                    produits.remove(pair);
+                    prixTotal -= produit.getPrix() * quantite;
+                    return;
+                }
+            }
+
+            System.out.println("Error: Product " + produit.getNom() + " with quantity " + quantite + " not found in the cart");
+        } else {
+            System.out.println("Error: Invalid quantity specified for product " + produit.getNom());
+        }
     }
 
     public List<Pair<Produit, Integer>> getProduits() {
         return produits;
     }
-
+    public Produit getProduitIdx(int idx) {
+        if (idx >= 0 && idx < produits.size()) {
+            Pair<Produit, Integer> pair = produits.get(idx);
+            return pair.getFirst();
+        } else {
+            // Handle the case where the index is out of bounds
+            System.out.println("Error: Index out of bounds");
+            return null; // Or throw an exception, depending on your error handling strategy
+        }
+    }
     public int getPrixTotal() {
         return prixTotal;
     }

@@ -57,6 +57,13 @@ public class MainActivity extends AppCompatActivity {
     }
     //endregion
 
+    /**
+     * @param view
+     *
+     *
+     *
+     *
+     */
     //region animations
     public void onDoor1Click(View view) {
         ImageButton doorButton = findViewById(R.id.enterDoor);

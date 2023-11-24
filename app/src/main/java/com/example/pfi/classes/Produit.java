@@ -56,4 +56,11 @@ public class Produit implements Serializable {
     public void setQuantite(int quantite) {
         this.quantite = quantite;
     }
+    @Override
+    public String toString() {
+        return "Produit{" +
+                "nom='" + nom + '\'' +
+                ", prix=" + prix +
+                '}';
+    }
 }
