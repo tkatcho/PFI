@@ -67,5 +67,14 @@
             android:textColor="@android:color/holo_red_dark" />
 
     </RelativeLayout>
+
+    <TextView
+        android:id="@+id/Title"
+        android:layout_width="268dp"
+        android:layout_height="156dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
