@@ -154,5 +154,7 @@ public class MainActivity extends AppCompatActivity {
     }
     //endregion
 
+    // liste des objets (recycler view)
+
 }
 

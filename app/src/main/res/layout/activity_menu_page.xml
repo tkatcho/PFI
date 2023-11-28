@@ -11,7 +11,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="Buy"
-        android:text="Button"
-        tools:layout_editor_absoluteX="125dp"
-        tools:layout_editor_absoluteY="156dp" />
+        android:text="Buy!"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="633dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/liste_objets"
+        android:layout_width="224dp"
+        android:layout_height="384dp"
+        tools:layout_editor_absoluteX="147dp"
+        tools:layout_editor_absoluteY="128dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
