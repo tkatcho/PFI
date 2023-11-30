@@ -37,6 +37,9 @@
             android:id="@+id/usernameEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:minLines="1"
+            android:lines="1"
             android:hint="Username" />
 
         <EditText
@@ -46,6 +49,9 @@
             android:layout_below="@id/usernameEditText"
             android:layout_marginTop="8dp"
             android:hint="Password"
+            android:maxLines="1"
+            android:minLines="1"
+            android:lines="1"
             android:inputType="textPassword" />
 
         <Button

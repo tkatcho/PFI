@@ -64,11 +64,13 @@ public class MainActivity extends AppCompatActivity {
      *
      *
      */
+
     //region animations
     public void onDoor1Click(View view) {
         ImageButton doorButton = findViewById(R.id.enterDoor);
         View loginForm = findViewById(R.id.loginForm);
 
+        doorButton.setEnabled(false);
         // Set pivot point to the hinge edge
         doorButton.setPivotX(0);
         doorButton.setPivotY(doorButton.getHeight());
