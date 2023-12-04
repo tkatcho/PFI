@@ -6,19 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".MenuPage">
 
-    <Button
-        android:id="@+id/buy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="Buy"
-        android:text="Buy!"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="633dp" />
+    <TextView
+        android:id="@+id/liste_text"
+        android:layout_width="294dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="53dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="634dp"
+        android:text="List of products"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/liste_objets"
-        android:layout_width="224dp"
-        android:layout_height="384dp"
-        tools:layout_editor_absoluteX="147dp"
-        tools:layout_editor_absoluteY="128dp" />
+        android:id="@+id/list"
+        android:layout_width="268dp"
+        android:layout_height="520dp"
+        tools:layout_editor_absoluteX="71dp"
+        tools:layout_editor_absoluteY="105dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
