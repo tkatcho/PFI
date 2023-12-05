@@ -31,17 +31,20 @@
         tools:layout_editor_absoluteY="105dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/breakfast"
         android:layout_width="122dp"
         android:layout_height="57dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginBottom="3dp"
         android:text="add to basket"
-        tools:layout_editor_absoluteX="11dp"
-        tools:layout_editor_absoluteY="671dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/vers_panier"
         android:layout_width="118dp"
         android:layout_height="52dp"
+        android:onClick="Buy"
         android:text="go to basket"
         tools:layout_editor_absoluteX="263dp"
         tools:layout_editor_absoluteY="671dp" />
