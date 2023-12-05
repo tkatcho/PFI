@@ -10,7 +10,7 @@
 
 
     <TextView
-        android:id="@+id/liste_text"
+        android:id="@+id/title_menu"
         android:layout_width="294dp"
         android:layout_height="44dp"
         android:layout_marginStart="58dp"
