@@ -22,7 +22,6 @@ public class PanierPageActivity extends AppCompatActivity {
 
 
         Intent intent = getIntent();
-        if (intent != null) {
             Panier panier = (Panier) intent.getSerializableExtra("panier");
 
             if (panier != null) {
@@ -38,5 +37,4 @@ public class PanierPageActivity extends AppCompatActivity {
                 Log.d("PanierData", "Prix Total: " + prixTotal);
             }
         }
-    }
 }

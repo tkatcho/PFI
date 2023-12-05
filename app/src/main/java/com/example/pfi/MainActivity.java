@@ -41,8 +41,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         titleAnimation();
-
-        //stardew valley themed selling plateform
     }
 
     //region login
@@ -64,11 +62,13 @@ public class MainActivity extends AppCompatActivity {
      *
      *
      */
+
     //region animations
     public void onDoor1Click(View view) {
         ImageButton doorButton = findViewById(R.id.enterDoor);
         View loginForm = findViewById(R.id.loginForm);
 
+        doorButton.setEnabled(false);
         // Set pivot point to the hinge edge
         doorButton.setPivotX(0);
         doorButton.setPivotY(doorButton.getHeight());
@@ -122,12 +122,10 @@ public class MainActivity extends AppCompatActivity {
                     currentIndex = i;
 
                     handler.post(() -> {
-                        // Update UI on the main thread
                         updateTextView();
                     });
 
                     try {
-                        // Sleep for a short duration to simulate typing
                         Thread.sleep(DELAY_PER_CHARACTER);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
@@ -146,7 +144,6 @@ public class MainActivity extends AppCompatActivity {
                 // Enlarge the currently typed letter
                 spannableString.setSpan(new AbsoluteSizeSpan(ENLARGED_TEXT_SIZE, true), i, i + 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
             } else {
-                // Keep previously typed letters in normal size
                 spannableString.setSpan(new AbsoluteSizeSpan(INITIAL_TEXT_SIZE, true), i, i + 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
             }
         }
