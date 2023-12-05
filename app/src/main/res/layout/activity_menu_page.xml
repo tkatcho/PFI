@@ -4,7 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MenuPage">
+    tools:context=".MenuPage"
+    android:background="@drawable/backgroundpfi"
+    >
+
 
     <TextView
         android:id="@+id/liste_text"
@@ -22,8 +25,24 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list"
-        android:layout_width="268dp"
-        android:layout_height="520dp"
-        tools:layout_editor_absoluteX="71dp"
+        android:layout_width="376dp"
+        android:layout_height="541dp"
+        tools:layout_editor_absoluteX="10dp"
         tools:layout_editor_absoluteY="105dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="122dp"
+        android:layout_height="57dp"
+        android:text="add to basket"
+        tools:layout_editor_absoluteX="11dp"
+        tools:layout_editor_absoluteY="671dp" />
+
+    <Button
+        android:id="@+id/vers_panier"
+        android:layout_width="118dp"
+        android:layout_height="52dp"
+        android:text="go to basket"
+        tools:layout_editor_absoluteX="263dp"
+        tools:layout_editor_absoluteY="671dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

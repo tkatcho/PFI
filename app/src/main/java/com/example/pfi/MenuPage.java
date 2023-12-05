@@ -18,6 +18,13 @@ public class MenuPage extends AppCompatActivity {
         setContentView(R.layout.activity_menu_page);
     }
 
+    /**
+     * Créer le recyclerview pour créer la liste des produits à vendre
+     *
+     */
+
+
+
     private void initializeProducts(){
 
     }
