@@ -11,6 +11,7 @@ import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Spannable;
@@ -47,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
     public void performLogin(View view){
         TextView errorMessage = findViewById(R.id.messageTextView);
         errorMessage.setText("salut");
-
 
         Intent intent = new Intent(this, MenuPage.class);
         intent.putExtra("user","salut");

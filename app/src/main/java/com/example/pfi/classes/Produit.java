@@ -7,9 +7,9 @@ public class Produit implements Serializable {
     private int prix;
     private int quantite;//quantite qu'il y a
     private String description;
-    private String imagePath;
+    private int imagePath;
 
-    public Produit(String nom, int prix, String description, String imagePath,int quantite) {
+    public Produit(String nom, int prix, String description, int imagePath,int quantite) {
         this.nom = nom;
         this.prix = prix;
         this.description = description;
@@ -25,11 +25,11 @@ public class Produit implements Serializable {
         this.description = description;
     }
 
-    public String getImagePath() {
+    public int getImagePath() {
         return imagePath;
     }
 
-    public void setImagePath(String imagePath) {
+    public void setImagePath(int imagePath) {
         this.imagePath = imagePath;
     }
 
