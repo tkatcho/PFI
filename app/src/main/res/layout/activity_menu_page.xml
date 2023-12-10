@@ -7,32 +7,9 @@
     tools:context=".MenuPage"
     android:background="@drawable/backgroundpfi">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:onClick="Description"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Button" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="TextView" />
-    </LinearLayout>
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
         android:layout_width="match_parent"
 
-        android:layout_height="match_parent" >
-
-    </androidx.recyclerview.widget.RecyclerView>
+        android:layout_height="match_parent" />
 </RelativeLayout>
