@@ -90,6 +90,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    // login
+
+    
     private void loginFadeAnim(){
         View loginForm = findViewById(R.id.loginForm);
 
