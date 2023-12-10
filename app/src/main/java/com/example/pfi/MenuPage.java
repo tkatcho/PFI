@@ -9,8 +9,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.os.Debug;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
@@ -18,7 +16,6 @@ import android.widget.TextView;
 import com.example.pfi.classes.Panier;
 import com.example.pfi.classes.Produit;
 
-import java.io.Console;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,42 +28,33 @@ public class MenuPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_page);
 
-        Intent intent = getIntent();
-        if (intent.hasExtra("panier")) {
-            panier = (Panier) intent.getSerializableExtra("panier");
-
-            if (panier != null) {
-                Log.v("marche","true");
-            } else {
-                Log.v("marche","false");
-            }
-        } else {
-            Log.v("marche","false");
-        }
         RecyclerView RecyclerView = findViewById(R.id.recycler);
 
+        List<Produit> items =  new ArrayList<Produit>();
+        items.add(new Produit("Breakfast",2,"description",R.drawable.breakfast,1)); // for now
+
+
         RecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        // RecyclerView.setAdapter(new Adapter(getApplicationContext(),));
+       // RecyclerView.setAdapter(new Adapter(getApplicationContext(),));
     }
 
     /**
      * Class to set fonts
      *
      */
-//    private void setFontMenu(){
-//        TextView textView = findViewById(R.id.title_menu);
-//        Typeface customTypeface = ResourcesCompat.getFont(this, R.font.stardew_font);
-//
-//        textView.setTypeface(customTypeface);
-//        textView.setTextColor(ContextCompat.getColor(this,R.color.white));
-//        textView.setTextSize(5,5);
-//        textView.setGravity(Gravity.CENTER);
-//    }
+    private void setFontMenu(){
+        TextView textView = findViewById(R.id.title_menu);
+        Typeface customTypeface = ResourcesCompat.getFont(this, R.font.stardew_font);
+
+        textView.setTypeface(customTypeface);
+        textView.setTextColor(ContextCompat.getColor(this,R.color.white));
+        textView.setTextSize(5,5);
+        textView.setGravity(Gravity.CENTER);
+//test
+    }
 
 
-    /**
-     * class to initialize all of the products
-     */
+
     private void initializeProducts(){
         produitList.add(new Produit("Breakfast",5,"Un bon dejeuner",R.drawable.breakfast,5));
         produitList.add(new Produit("Fish",10,"Poisson fraichement ceuilli",R.drawable.fish,3));
