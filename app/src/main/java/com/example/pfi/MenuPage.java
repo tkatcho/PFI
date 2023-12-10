@@ -39,7 +39,7 @@ public class MenuPage extends AppCompatActivity {
         textView.setTextColor(ContextCompat.getColor(this,R.color.white));
         textView.setTextSize(5,5);
         textView.setGravity(Gravity.CENTER);
-
+//test
     }
 
 
