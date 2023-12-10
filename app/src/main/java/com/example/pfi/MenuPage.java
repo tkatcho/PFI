@@ -30,18 +30,16 @@ public class MenuPage extends AppCompatActivity {
 
         RecyclerView RecyclerView = findViewById(R.id.recycler);
 
-        List<Produit> items =  new ArrayList<Produit>();
-        items.add(new Produit("Breakfast",2,"description",R.drawable.breakfast,1)); // for now
-
-
         RecyclerView.setLayoutManager(new LinearLayoutManager(this));
        // RecyclerView.setAdapter(new Adapter(getApplicationContext(),));
+
+        initializeProducts();
     }
 
     /**
      * Class to set fonts
      *
-     */
+
     private void setFontMenu(){
         TextView textView = findViewById(R.id.title_menu);
         Typeface customTypeface = ResourcesCompat.getFont(this, R.font.stardew_font);
@@ -52,7 +50,7 @@ public class MenuPage extends AppCompatActivity {
         textView.setGravity(Gravity.CENTER);
 //test
     }
-
+*/
 
 
     private void initializeProducts(){
