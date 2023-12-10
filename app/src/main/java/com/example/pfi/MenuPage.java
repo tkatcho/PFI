@@ -43,6 +43,7 @@ public class MenuPage extends AppCompatActivity {
         RecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
        // RecyclerView.setAdapter(new Adapter(getApplicationContext(),));
+       // RecyclerView.setAdapter(new Adapter(getApplicationContext(),)); // possible erreur
     }
 
     /**

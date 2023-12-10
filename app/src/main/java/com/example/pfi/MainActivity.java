@@ -22,6 +22,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -43,33 +44,55 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mp = MediaPlayer.create(this,R.raw.justthetwofofus);
+        mp = MediaPlayer.create(this, R.raw.justthetwofofus);
         titleAnimation();
 
+
+        initializeLogin();
     }
 
-    //region login
-    public void performLogin(View view){
+    private void initializeLogin() {
+        TextView username = findViewById(R.id.usernameEditText);
+        TextView password = findViewById(R.id.passwordEditText);
+        Button loginbtn = findViewById(R.id.loginButton);
         TextView errorMessage = findViewById(R.id.messageTextView);
-        errorMessage.setText("salut");
 
-        //si pas bon, on met ce toast pour avoir les points de notif, aussi mettre le errormessage a se qu'il faut.
-        Toast.makeText(this, "invalid, try again", Toast.LENGTH_SHORT).show();
+        loginbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                performLogin(username.getText().toString(), password.getText().toString(), errorMessage);
+            }
+        });
+    }
+
+    private void performLogin(String enteredUsername, String enteredPassword, TextView errorMessage) {
+        if (enteredUsername.equals("admin") && enteredPassword.equals("admin")) {
+            Toast.makeText(MainActivity.this, "Login successful!", Toast.LENGTH_SHORT).show();
+            mp.stop();
+            Intent intent = new Intent(MainActivity.this, MenuPage.class);
+            intent.putExtra("user", "salut");
+            startActivity(intent);
+        } else {
+            Toast.makeText(MainActivity.this, "Invalid login.", Toast.LENGTH_SHORT).show();
+
+            // Wrong username
+            if (!enteredUsername.equals("admin")) {
+                errorMessage.setText("Wrong username");
+            }
+            // Wrong password
+            if (!enteredPassword.equals("admin")) {
+                errorMessage.setText("Wrong password");
+            }
+        }
+
 
         mp.stop();
         Intent intent = new Intent(this, MenuPage.class);
-        intent.putExtra("user","salut");
+        intent.putExtra("user", "salut");
         startActivity(intent);
     }
     //endregion
 
-    /**
-     * @param view
-     *
-     *
-     *
-     *
-     */
 
     //region animations
     public void onDoor1Click(View view) {
