@@ -36,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
     private static final long DELAY_PER_CHARACTER = 200;
     //endregion
 
+    /**
+     * Project made by Tristan Katcho and Eliana Restrepo-Gonzalez
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,15 +59,12 @@ public class MainActivity extends AppCompatActivity {
     }
     //endregion
 
-    /**
-     * @param view
-     *
-     *
-     *
-     *
-     */
-
     //region animations
+
+    /**
+     * Button to start animation + make animation via coding
+     * @param view
+     */
     public void onDoor1Click(View view) {
         ImageButton doorButton = findViewById(R.id.enterDoor);
         View loginForm = findViewById(R.id.loginForm);
@@ -90,6 +91,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    /**
+     * animation to show the login form showing
+     */
     private void loginFadeAnim(){
         View loginForm = findViewById(R.id.loginForm);
 
@@ -111,6 +116,10 @@ public class MainActivity extends AppCompatActivity {
         textView.setTextSize(5,5);
         textView.setGravity(Gravity.CENTER);
     }
+
+    /**
+     * multithreading to show title animation
+     */
     private void titleAnimation() {
         final Handler handler = new Handler();
         title = findViewById(R.id.Title);
