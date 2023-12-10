@@ -41,17 +41,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        titleAnimation();
+        //titleAnimation();
     }
 
     //region login
     public void performLogin(View view){
-        TextView errorMessage = findViewById(R.id.messageTextView);
-        errorMessage.setText("salut");
-
-        Intent intent = new Intent(this, MenuPage.class);
-        intent.putExtra("user","salut");
-        startActivity(intent);
+//        TextView errorMessage = findViewById(R.id.messageTextView);
+//        errorMessage.setText("salut");
+//
+//        Intent intent = new Intent(this, MenuPage.class);
+//        intent.putExtra("user","salut");
+//        startActivity(intent);
     }
     //endregion
 
@@ -65,30 +65,30 @@ public class MainActivity extends AppCompatActivity {
 
     //region animations
     public void onDoor1Click(View view) {
-        ImageButton doorButton = findViewById(R.id.enterDoor);
-        View loginForm = findViewById(R.id.loginForm);
-
-        doorButton.setEnabled(false);
-        // Set pivot point to the hinge edge
-        doorButton.setPivotX(0);
-        doorButton.setPivotY(doorButton.getHeight());
-
-        // Create ObjectAnimator for rotation around Y-axis
-        ObjectAnimator rotationAnimator = ObjectAnimator.ofFloat(doorButton, "rotationY", 0f, -75f);
-        rotationAnimator.setDuration(1000);
-
-        // Play animation
-        AnimatorSet animatorSet = new AnimatorSet();
-        animatorSet.play(rotationAnimator);
-        animatorSet.start();
-
-
-        animatorSet.addListener(new AnimatorListenerAdapter() {
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                loginFadeAnim();
-            }
-        });
+//        ImageButton doorButton = findViewById(R.id.enterDoor);
+//        View loginForm = findViewById(R.id.loginForm);
+//
+//        doorButton.setEnabled(false);
+//        // Set pivot point to the hinge edge
+//        doorButton.setPivotX(0);
+//        doorButton.setPivotY(doorButton.getHeight());
+//
+//        // Create ObjectAnimator for rotation around Y-axis
+//        ObjectAnimator rotationAnimator = ObjectAnimator.ofFloat(doorButton, "rotationY", 0f, -75f);
+//        rotationAnimator.setDuration(1000);
+//
+//        // Play animation
+//        AnimatorSet animatorSet = new AnimatorSet();
+//        animatorSet.play(rotationAnimator);
+//        animatorSet.start();
+//
+//
+//        animatorSet.addListener(new AnimatorListenerAdapter() {
+//            @Override
+//            public void onAnimationEnd(Animator animation) {
+//                loginFadeAnim();
+//            }
+//        });
     }
     private void loginFadeAnim(){
         View loginForm = findViewById(R.id.loginForm);
@@ -103,13 +103,13 @@ public class MainActivity extends AppCompatActivity {
         animatorSet.start();
     }
     private void setFont(){
-        TextView textView = findViewById(R.id.Title);
-        Typeface customTypeface = ResourcesCompat.getFont(this, R.font.stardew_font);
-
-        textView.setTypeface(customTypeface);
-        textView.setTextColor(ContextCompat.getColor(this,R.color.white));
-        textView.setTextSize(5,5);
-        textView.setGravity(Gravity.CENTER);
+//        TextView textView = findViewById(R.id.Title);
+//        Typeface customTypeface = ResourcesCompat.getFont(this, R.font.stardew_font);
+//
+//        textView.setTypeface(customTypeface);
+//        textView.setTextColor(ContextCompat.getColor(this,R.color.white));
+//        textView.setTextSize(5,5);
+//        textView.setGravity(Gravity.CENTER);
     }
     private void titleAnimation() {
         final Handler handler = new Handler();

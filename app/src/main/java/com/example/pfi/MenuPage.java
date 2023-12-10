@@ -3,6 +3,8 @@ package com.example.pfi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -19,28 +21,35 @@ import java.util.List;
 
 public class MenuPage extends AppCompatActivity {
     Panier panier = new Panier();
-
     List<Produit> produitList = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_page);
+
+        //RecyclerView RecyclerView = findViewById(R.id.recycler);
+
+        //RecyclerView.setLayoutManager(new LinearLayoutManager(this));
+       // RecyclerView.setAdapter(new Adapter(getApplicationContext(),));
+        //initializeProducts();
     }
 
     /**
      * Class to set fonts
      *
      */
-    private void setFontMenu(){
-        TextView textView = findViewById(R.id.title_menu);
-        Typeface customTypeface = ResourcesCompat.getFont(this, R.font.stardew_font);
 
-        textView.setTypeface(customTypeface);
-        textView.setTextColor(ContextCompat.getColor(this,R.color.white));
-        textView.setTextSize(5,5);
-        textView.setGravity(Gravity.CENTER);
-//test
-    }
+//    private void setFontMenu(){
+//        TextView textView = findViewById(R.id.title_menu);
+//        Typeface customTypeface = ResourcesCompat.getFont(this, R.font.stardew_font);
+//
+//        textView.setTypeface(customTypeface);
+//        textView.setTextColor(ContextCompat.getColor(this,R.color.white));
+//        textView.setTextSize(5,5);
+//        textView.setGravity(Gravity.CENTER);
+////test
+//    }
 
 
 
@@ -63,6 +72,16 @@ public class MenuPage extends AppCompatActivity {
     public void Buy(View view){
         Intent intent = new Intent(this, PanierPageActivity.class);
         intent.putExtra("panier",panier);
+        startActivity(intent);
+    }
+
+    public void Description(View view){
+        Intent intent = new Intent(this, DescriptionPage.class);
+
+        int chosenProductID=0;
+
+        intent.putExtra("chosenProduct",chosenProductID);
+
         startActivity(intent);
     }
 }

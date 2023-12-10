@@ -13,6 +13,9 @@
         android:theme="@style/Theme.PFI"
         tools:targetApi="31">
         <activity
+            android:name=".DescriptionPage"
+            android:exported="false" />
+        <activity
             android:name=".PanierPageActivity"
             android:exported="false" />
         <activity
@@ -28,4 +31,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>
