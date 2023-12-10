@@ -21,7 +21,7 @@ public class Adapter extends RecyclerView.Adapter<ViewHolder> {
         this.context = context;
     }
 
-    public Adapter(List<Produit> produits) {
+    public Adapter(Context applicationContext, List<Produit> produits) {
         this.produits = produits;
     }
 

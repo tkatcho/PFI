@@ -31,7 +31,7 @@ public class MenuPage extends AppCompatActivity {
         RecyclerView RecyclerView = findViewById(R.id.recycler);
 
         RecyclerView.setLayoutManager(new LinearLayoutManager(this));
-       // RecyclerView.setAdapter(new Adapter(getApplicationContext(),));
+        RecyclerView.setAdapter(new Adapter(getApplicationContext(),produitList));
 
         initializeProducts();
     }
@@ -55,13 +55,13 @@ public class MenuPage extends AppCompatActivity {
 
     private void initializeProducts(){
         produitList.add(new Produit("Breakfast",5,"Un bon dejeuner",R.drawable.breakfast,5));
-        produitList.add(new Produit("Fish",10,"Poisson fraichement ceuilli",R.drawable.fish,3));
+        produitList.add(new Produit("Fish",10,"Poisson fraichement cueilli",R.drawable.fish,3));
         produitList.add(new Produit("Fish Taco",15,"Taco poisson",R.drawable.fishtaco,1));
         produitList.add(new Produit("Calimar fri",10,"Amazing calmari straight from the waters of the artic ocean",R.drawable.friedcalimari,5));
         produitList.add(new Produit("Choix du chef",10,"Pense tu etre chanceux aujourd'hui?",R.drawable.luckylunch,2));
         produitList.add(new Produit("Choix du travailleur",5,"Un bon dejeuner",R.drawable.minerstreat,5));
         produitList.add(new Produit("Pancakes",10,"Recouvert de nutella, creme et fraises",R.drawable.pancakes,5));
-        produitList.add(new Produit("PepperPoppers",4,"Excellent entrer",R.drawable.pepperpoppers,5));
+        produitList.add(new Produit("PepperPoppers",4,"Excellent entree",R.drawable.pepperpoppers,5));
         produitList.add(new Produit("Pie",12,"Une bonne tarte au pommes",R.drawable.pie,5));
         produitList.add(new Produit("Gateau rose",30,"Un gateau pour une occasion speciale",R.drawable.pinkcake,2));
         produitList.add(new Produit("Red hot challenge",10,"Un menu qui brulera votre langue",R.drawable.spicy,5));
