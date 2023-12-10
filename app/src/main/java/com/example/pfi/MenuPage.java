@@ -83,6 +83,10 @@ public class MenuPage extends AppCompatActivity {
         produitList.add(new Produit("Legumes",10,"Un bon choix vegetarien",R.drawable.vegetable,5));
     }
 
+    public void test(View view){
+        Intent intent = new Intent(this, DescriptionPage.class);
+        startActivity(intent);
+    }
     public void Buy(View view){
         Intent intent = new Intent(this, PanierPageActivity.class);
         intent.putExtra("panier",panier);

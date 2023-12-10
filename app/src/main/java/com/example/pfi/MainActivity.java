@@ -23,6 +23,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.lang.reflect.Type;
 
@@ -53,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
         TextView errorMessage = findViewById(R.id.messageTextView);
         errorMessage.setText("salut");
 
+        //si pas bon, on met ce toast pour avoir les points de notif, aussi mettre le errormessage a se qu'il faut.
+        Toast.makeText(this, "invalid, try again", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, MenuPage.class);
         intent.putExtra("user","salut");
         startActivity(intent);

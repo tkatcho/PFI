@@ -25,6 +25,9 @@ android {
             )
         }
     }
+    buildFeatures{
+        dataBinding = true
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -41,4 +44,5 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation ("com.google.android.exoplayer:exoplayer:2.18.7")
     implementation ("pl.droidsonroids.gif:android-gif-drawable:1.2.17")
+    annotationProcessor ("androidx.lifecycle:lifecycle-compiler:2.3.1")
 }
