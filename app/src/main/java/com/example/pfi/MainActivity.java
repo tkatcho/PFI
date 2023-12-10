@@ -12,6 +12,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Spannable;
@@ -24,6 +25,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.lang.reflect.Type;
 
@@ -35,14 +37,16 @@ public class MainActivity extends AppCompatActivity {
     private static final int INITIAL_TEXT_SIZE = 40;
     private static final int ENLARGED_TEXT_SIZE = 80;
     private static final long DELAY_PER_CHARACTER = 200;
+    MediaPlayer mp;
     //endregion
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        mp = MediaPlayer.create(this,R.raw.justthetwofofus);
         titleAnimation();
+
     }
 
     //region login
@@ -60,6 +64,10 @@ public class MainActivity extends AppCompatActivity {
         TextView errorMessage = findViewById(R.id.messageTextView);
         errorMessage.setText("salut");
 
+        //si pas bon, on met ce toast pour avoir les points de notif, aussi mettre le errormessage a se qu'il faut.
+        Toast.makeText(this, "invalid, try again", Toast.LENGTH_SHORT).show();
+
+        mp.stop();
         Intent intent = new Intent(this, MenuPage.class);
         intent.putExtra("user","salut");
         startActivity(intent);
@@ -121,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
         setFont();
         new Thread(() -> {
             while (true) {
+                mp.start();
                 for (int i = 0; i < textToType.length(); i++) {
                     final char currentChar = textToType.charAt(i);
                     currentIndex = i;
