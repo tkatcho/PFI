@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Produit implements Serializable {
     private String nom;
     private int prix;
-    private int quantite;//quantite qu'il y a
+    private int quantite;//quantite qu'il y a, we'll see about that
     private String description;
     private int imagePath;
 
