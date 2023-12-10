@@ -49,12 +49,12 @@ public class Adapter extends RecyclerView.Adapter<ViewHolder> {
             @Override
             public void onClick(View view) {
                 // send to another page
-               // Intent intent = new Intent(view.getContext(), DescriptionActivity.class);
+               Intent intent = new Intent(view.getContext(), DescriptionPage.class);
 
                 // Pass the product
-                //intent.putExtra("product", product);
+                intent.putExtra("product", product);
                 // Start the description activity
-                //view.getContext().startActivity(intent);
+                view.getContext().startActivity(intent);
             }
         });
     }

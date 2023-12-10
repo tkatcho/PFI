@@ -21,6 +21,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -45,6 +46,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //region login
+
+    public void Login()
+    {
+       TextView username = (TextView) findViewById(R.id.usernameEditText);
+       TextView password =  (TextView) findViewById(R.id.passwordEditText);
+       Button loginbtn  = (Button) findViewById(R.id.loginButton);
+
+
+    }
+
     public void performLogin(View view){
         TextView errorMessage = findViewById(R.id.messageTextView);
         errorMessage.setText("salut");
@@ -55,13 +66,6 @@ public class MainActivity extends AppCompatActivity {
     }
     //endregion
 
-    /**
-     * @param view
-     *
-     *
-     *
-     *
-     */
 
     //region animations
     public void onDoor1Click(View view) {

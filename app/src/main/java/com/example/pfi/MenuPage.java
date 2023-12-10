@@ -30,29 +30,11 @@ public class MenuPage extends AppCompatActivity {
 
         RecyclerView RecyclerView = findViewById(R.id.recycler);
 
-        List<Produit> items =  new ArrayList<Produit>();
-        items.add(new Produit("Breakfast",2,"description",R.drawable.breakfast,1)); // for now
-
+        // à refaire cuz the error is there
 
         RecyclerView.setLayoutManager(new LinearLayoutManager(this));
-       // RecyclerView.setAdapter(new Adapter(getApplicationContext(),));
+        RecyclerView.setAdapter(new Adapter(getApplicationContext(),));
     }
-
-    /**
-     * Class to set fonts
-     *
-     */
-    private void setFontMenu(){
-        TextView textView = findViewById(R.id.title_menu);
-        Typeface customTypeface = ResourcesCompat.getFont(this, R.font.stardew_font);
-
-        textView.setTypeface(customTypeface);
-        textView.setTextColor(ContextCompat.getColor(this,R.color.white));
-        textView.setTextSize(5,5);
-        textView.setGravity(Gravity.CENTER);
-//test
-    }
-
 
 
     private void initializeProducts(){
