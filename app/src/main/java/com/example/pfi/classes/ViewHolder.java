@@ -9,11 +9,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pfi.R;
 
-public class Recycler extends RecyclerView.ViewHolder {
+public class ViewHolder extends RecyclerView.ViewHolder {
 
-    ImageView imageView;
-    TextView nameView , priceView;
-    public Recycler(@NonNull View itemView) {
+   public ImageView imageView;
+    public TextView nameView , priceView;
+    public ViewHolder(@NonNull View itemView) {
         super(itemView);
         imageView = itemView.findViewById(R.id.imageView);
         nameView = itemView.findViewById(R.id.name);
