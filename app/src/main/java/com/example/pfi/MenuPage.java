@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.pfi.classes.Panier;
 import com.example.pfi.classes.Produit;
@@ -30,11 +31,17 @@ public class MenuPage extends AppCompatActivity {
 
         RecyclerView RecyclerView = findViewById(R.id.recycler);
 
-        List<Produit> items =  new ArrayList<Produit>();
-        items.add(new Produit("Breakfast",2,"description",R.drawable.breakfast,1)); // for now
+        Intent intent = getIntent();
 
-
+        if(intent!=null){
+            String sourceActivity = intent.getStringExtra("source");
+            if(sourceActivity!=null && sourceActivity.equals("desc")){
+                panier = (Panier) intent.getSerializableExtra("panier");
+                Toast.makeText(this,"recu le panier",Toast.LENGTH_LONG).show();
+            }
+        }
         RecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
        // RecyclerView.setAdapter(new Adapter(getApplicationContext(),));
     }
 
@@ -73,11 +80,14 @@ public class MenuPage extends AppCompatActivity {
 
     public void description(View view){
         Intent intent = new Intent(this, DescriptionPage.class);
+        intent.putExtra("panier",panier);
+        //intent.putExtra("produit","produitAMettre");
         startActivity(intent);
     }
     public void Buy(View view){
         Intent intent = new Intent(this, PanierPageActivity.class);
         intent.putExtra("panier",panier);
+        intent.putExtra("user","userAMettre");
         startActivity(intent);
     }
 }

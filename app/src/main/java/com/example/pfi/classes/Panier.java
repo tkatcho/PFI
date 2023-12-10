@@ -15,13 +15,15 @@ public class Panier implements Serializable {
     }
 
     // Methods to manipulate the products in the cart
-    public void ajouterProduit(Produit produit, int quantite) {
+    public boolean ajouterProduit(Produit produit, int quantite) {
         // Check if the requested quantity is available
         if (quantite > 0 && quantite <= produit.getQuantite()) {
             produits.add(new Pair<>(produit, quantite));
             prixTotal += produit.getPrix() * quantite;
+            return true;
         } else {
             System.out.println("Error: Insufficient quantity available for product " + produit.getNom());
+            return false;
         }
     }
 
