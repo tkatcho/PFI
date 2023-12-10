@@ -26,6 +26,7 @@ public class DescriptionPage extends AppCompatActivity {
         // Simulate a product (replace with your actual product)
         product = new Produit("Breakfast",5,"Un bon dejeuner", R.drawable.vegetable,5);
 
+        
         binding.setProduct(product);
 
          //Set up two-way data binding for the quantity input

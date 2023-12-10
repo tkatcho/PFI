@@ -42,16 +42,16 @@ public class MenuPage extends AppCompatActivity {
      * Class to set fonts
      *
      */
-    private void setFontMenu(){
-        TextView textView = findViewById(R.id.title_menu);
-        Typeface customTypeface = ResourcesCompat.getFont(this, R.font.stardew_font);
-
-        textView.setTypeface(customTypeface);
-        textView.setTextColor(ContextCompat.getColor(this,R.color.white));
-        textView.setTextSize(5,5);
-        textView.setGravity(Gravity.CENTER);
-//test
-    }
+//    private void setFontMenu(){
+//        TextView textView = findViewById(R.id.title_menu);
+//        Typeface customTypeface = ResourcesCompat.getFont(this, R.font.stardew_font);
+//
+//        textView.setTypeface(customTypeface);
+//        textView.setTextColor(ContextCompat.getColor(this,R.color.white));
+//        textView.setTextSize(5,5);
+//        textView.setGravity(Gravity.CENTER);
+////test
+//    }
 
 
 
@@ -71,7 +71,7 @@ public class MenuPage extends AppCompatActivity {
         produitList.add(new Produit("Legumes",10,"Un bon choix vegetarien",R.drawable.vegetable,5));
     }
 
-    public void test(View view){
+    public void description(View view){
         Intent intent = new Intent(this, DescriptionPage.class);
         startActivity(intent);
     }
