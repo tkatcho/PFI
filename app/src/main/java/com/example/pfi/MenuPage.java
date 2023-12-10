@@ -36,22 +36,6 @@ public class MenuPage extends AppCompatActivity {
         initializeProducts();
     }
 
-    /**
-     * Class to set fonts
-     *
-
-    private void setFontMenu(){
-        TextView textView = findViewById(R.id.title_menu);
-        Typeface customTypeface = ResourcesCompat.getFont(this, R.font.stardew_font);
-
-        textView.setTypeface(customTypeface);
-        textView.setTextColor(ContextCompat.getColor(this,R.color.white));
-        textView.setTextSize(5,5);
-        textView.setGravity(Gravity.CENTER);
-//test
-    }
-*/
-
 
     private void initializeProducts(){
         produitList.add(new Produit("Breakfast",5,"Un bon dejeuner",R.drawable.breakfast,5));
