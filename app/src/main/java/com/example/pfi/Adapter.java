@@ -22,29 +22,27 @@ public class Adapter extends RecyclerView.Adapter<ViewHolder> {
     Context context;
     List<Produit> produits;
 
+    //initialisation
+
     public Adapter(Context context, List<Produit> produitList) {
         this.context = context;
-
-}
-
-    public Adapter(List<Produit> produits) {
-        this.produits = produits;
+        this.produits = produitList;
     }
+
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_view,parent,false));
+        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_view, parent, false));
     }
-
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         final Produit product = produits.get(position);
 
-        // Set item data
+
         holder.nameView.setText(product.getNom());
-        holder.priceView.setText(product.getPrix());
+        holder.priceView.setText(String.valueOf(product.getPrix())); // Convert int to String
         holder.imageView.setImageResource(product.getImagePath());
 
         // Set an OnClickListener on the LinearLayout
@@ -52,7 +50,7 @@ public class Adapter extends RecyclerView.Adapter<ViewHolder> {
             @Override
             public void onClick(View view) {
                 // send to another page
-               Intent intent = new Intent(view.getContext(), DescriptionPage.class);
+                Intent intent = new Intent(view.getContext(), DescriptionPage.class);
 
                 // Pass the product
                 intent.putExtra("product", product);
@@ -61,8 +59,9 @@ public class Adapter extends RecyclerView.Adapter<ViewHolder> {
             }
         });
     }
+
     @Override
     public int getItemCount() {
-        return produits.size();
+        return produits != null ? produits.size() : 0;
     }
 }

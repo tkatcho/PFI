@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">PFI</string>
+    // main page
+    <string name="app_name">Stardew Valley Resto</string>
+    <string name="hint_username" > username</string>
+    <string name="hint_password" > password</string>
+
+    //page du panier
+
 </resources>
