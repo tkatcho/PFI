@@ -18,26 +18,26 @@ import com.example.pfi.classes.Produit;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.example.pfi.Adapter;
+import com.example.pfi.DescriptionPage;
 
 public class MenuPage extends AppCompatActivity {
     Panier panier = new Panier();
-
     List<Produit> produitList = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_page);
 
         RecyclerView RecyclerView = findViewById(R.id.recycler);
-
-        List<Produit> items =  new ArrayList<Produit>();
-        items.add(new Produit("Breakfast",2,"description",R.drawable.breakfast,1)); // for now
-
+        initializeProducts();
 
         RecyclerView.setLayoutManager(new LinearLayoutManager(this));
-       // RecyclerView.setAdapter(new Adapter(getApplicationContext(),)); // possible erreur
-    }
+        RecyclerView.setAdapter(new Adapter(this, produitList));
 
+
+    }
 
 
     private void initializeProducts(){
@@ -56,6 +56,10 @@ public class MenuPage extends AppCompatActivity {
         produitList.add(new Produit("Legumes",10,"Un bon choix vegetarien",R.drawable.vegetable,5));
     }
 
+    /**
+     * classe pour ammener l'usager à la prochaine page : panier
+     * @param view
+     */
     public void Buy(View view){
         Intent intent = new Intent(this, PanierPageActivity.class);
         intent.putExtra("panier",panier);
