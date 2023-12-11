@@ -10,22 +10,29 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
         android:layout_width="match_parent"
-
-        android:layout_height="match_parent" />
+        android:layout_height="635dp" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="description"
-        android:text="Button" />
+        android:text="Description"
+        android:layout_below="@id/recycler"
+        />
+
+    <Space
+        android:layout_width="8dp"
+        android:layout_height="match_parent" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/recycler"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="132dp"
+        android:layout_marginTop="689dp"
         android:onClick="Buy"
-        android:text="Button" />
+        android:text="Buy!"
+        />
 </RelativeLayout>
