@@ -14,12 +14,15 @@ import com.example.pfi.classes.ViewHolder;
 
 import java.util.List;
 
+/**
+ * Classe pour créer l'adapter
+ */
 public class Adapter extends RecyclerView.Adapter<ViewHolder> {
 
     Context context;
     List<Produit> produits;
 
-    public Adapter(Context context) {
+    public Adapter(Context context, List<Produit> produitList) {
         this.context = context;
 
 }

@@ -40,6 +40,11 @@ public class MainActivity extends AppCompatActivity {
     MediaPlayer mp;
     //endregion
 
+    /**
+     * Commence l'application, la musique et l'animation du titre
+     * @param savedInstanceState
+     */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +56,9 @@ public class MainActivity extends AppCompatActivity {
         initializeLogin();
     }
 
+    /**
+     * Initialise le login (TextViews et bouton)
+     */
     private void initializeLogin() {
         TextView username = findViewById(R.id.usernameEditText);
         TextView password = findViewById(R.id.passwordEditText);
@@ -65,6 +73,12 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Vérifie l'information du login donné par l'usager
+     * @param enteredUsername
+     * @param enteredPassword
+     * @param errorMessage
+     */
     private void performLogin(String enteredUsername, String enteredPassword, TextView errorMessage) {
         if (enteredUsername.equals("admin") && enteredPassword.equals("admin")) {
             Toast.makeText(MainActivity.this, "Login successful!", Toast.LENGTH_SHORT).show();
@@ -72,7 +86,9 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, MenuPage.class);
             intent.putExtra("user", "salut");
             startActivity(intent);
-        } else {
+        }
+        else {
+
             Toast.makeText(MainActivity.this, "Invalid login.", Toast.LENGTH_SHORT).show();
 
             // Wrong username
@@ -83,9 +99,8 @@ public class MainActivity extends AppCompatActivity {
             if (!enteredPassword.equals("admin")) {
                 errorMessage.setText("Wrong password");
             }
+
         }
-
-
         mp.stop();
         Intent intent = new Intent(this, MenuPage.class);
         intent.putExtra("user", "salut");
@@ -94,6 +109,10 @@ public class MainActivity extends AppCompatActivity {
     //endregion
 
 
+    /**
+     * L'animation de la porte
+     * @param view
+     */
     //region animations
     public void onDoor1Click(View view) {
         ImageButton doorButton = findViewById(R.id.enterDoor);
@@ -133,6 +152,10 @@ public class MainActivity extends AppCompatActivity {
         animatorSet.play(loginFormAlphaAnimator);
         animatorSet.start();
     }
+
+    /**
+     * Modifie la police du titre
+     */
     private void setFont(){
         TextView textView = findViewById(R.id.Title);
         Typeface customTypeface = ResourcesCompat.getFont(this, R.font.stardew_font);
@@ -142,6 +165,10 @@ public class MainActivity extends AppCompatActivity {
         textView.setTextSize(5,5);
         textView.setGravity(Gravity.CENTER);
     }
+
+    /**
+     * L'animation du titre
+     */
     private void titleAnimation() {
         final Handler handler = new Handler();
         title = findViewById(R.id.Title);

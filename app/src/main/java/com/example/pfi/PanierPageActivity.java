@@ -18,6 +18,9 @@ import java.util.List;
 
 import kotlin.Pair;
 
+/**
+ * Gère le panier
+ */
 public class PanierPageActivity extends AppCompatActivity {
     private ProductAdapter adapter;
     private static Panier panier;
