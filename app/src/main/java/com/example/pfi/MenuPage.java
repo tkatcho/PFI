@@ -44,26 +44,13 @@ public class MenuPage extends AppCompatActivity {
                 Toast.makeText(this,"recu le panier",Toast.LENGTH_LONG).show();
             }
         }
+        initializeProducts();
         RecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        RecyclerView.setAdapter(new Adapter(this, produitList));
 
-       // RecyclerView.setAdapter(new Adapter(getApplicationContext(),));
-       // RecyclerView.setAdapter(new Adapter(getApplicationContext(),)); // possible erreur
     }
 
-    /**
-     * Class to set fonts
-     *
-     */
-//    private void setFontMenu(){
-//        TextView textView = findViewById(R.id.title_menu);
-//        Typeface customTypeface = ResourcesCompat.getFont(this, R.font.stardew_font);
-//
-//        textView.setTypeface(customTypeface);
-//        textView.setTextColor(ContextCompat.getColor(this,R.color.white));
-//        textView.setTextSize(5,5);
-//        textView.setGravity(Gravity.CENTER);
-////test
-//    }
+
 
 
 
