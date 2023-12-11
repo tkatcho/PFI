@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Panier implements Serializable {
-    private List<Pair<Produit, Integer>> produits = new ArrayList<>();
+    private static List<Pair<Produit, Integer>> produits = new ArrayList<>();
     private int prixTotal = 0;
 
     public Panier() {
@@ -32,11 +32,11 @@ public class Panier implements Serializable {
         if (quantite > 0) {
             // Find the Pair in the list that matches the specified product and quantity
             for (Pair<Produit, Integer> pair : produits) {
-                if (pair.getFirst().equals(produit) && pair.getSecond() == quantite) {
+                if (pair.getFirst().equals(produit)) {
                     produits.remove(pair);
-                    prixTotal -= produit.getPrix() * quantite;
+
                     return;
-                }
+                }prixTotal =0;
             }
 
             System.out.println("Error: Product " + produit.getNom() + " with quantity " + quantite + " not found in the cart");
@@ -44,7 +44,16 @@ public class Panier implements Serializable {
             System.out.println("Error: Invalid quantity specified for product " + produit.getNom());
         }
     }
+    public Integer calculerTotal(){
+        int total=0;
 
+        for (Pair<Produit, Integer> pair : produits) {
+            if(pair.getFirst()!=null){
+                total+= pair.getFirst().getPrix() * pair.getSecond();
+            }
+        }
+        return total;
+    }
     public List<Pair<Produit, Integer>> getProduits() {
         return produits;
     }
@@ -61,7 +70,9 @@ public class Panier implements Serializable {
     public int getPrixTotal() {
         return prixTotal;
     }
-
+    public void setPrixTotal(int i) {
+        prixTotal = i;
+        }
 
     @Override
     public String toString() {

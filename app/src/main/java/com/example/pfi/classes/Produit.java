@@ -36,7 +36,9 @@ public class Produit implements Serializable {
     public int getPrix() {
         return prix;
     }
-
+    public String getPrix2(){
+        return "" + prix;
+    }
     public void setPrix(int prix) {
         this.prix = prix;
     }

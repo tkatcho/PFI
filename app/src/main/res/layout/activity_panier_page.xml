@@ -6,4 +6,60 @@
     android:layout_height="match_parent"
     tools:context=".PanierPageActivity">
 
+    <ListView
+        android:id="@+id/listViewProducts"
+        android:layout_width="410dp"
+        android:layout_height="301dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/CompleteTransaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="20dp"
+        android:text="Buy everything"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listViewProducts" />
+
+    <TextView
+        android:id="@+id/userMoney"
+        android:layout_width="111dp"
+        android:layout_height="50dp"
+        android:fontFamily="@font/stardew_font"
+        android:gravity="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/UserName"
+        android:layout_width="121dp"
+        android:layout_height="53dp"
+        android:fontFamily="@font/stardew_font"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/cancelPurchaseButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="64dp"
+        android:text="Cancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listViewProducts" />
+
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="170dp"
+        android:layout_height="36dp"
+        android:fontFamily="@font/stardew_font"
+        android:gravity="center"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="121dp"
+        tools:layout_editor_absoluteY="0dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

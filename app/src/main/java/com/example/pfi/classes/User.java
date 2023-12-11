@@ -3,7 +3,7 @@ package com.example.pfi.classes;
 import java.io.Serializable;
 
 public class User implements Serializable {
-    private String uName;
+    public String uName;
     private String uPassword;
     private int money;
     public String getuName() {

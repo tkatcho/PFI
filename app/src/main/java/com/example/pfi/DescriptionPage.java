@@ -18,7 +18,7 @@ import java.util.Set;
 
 public class DescriptionPage extends AppCompatActivity {
     private ActivityDescriptionPageBinding binding;
-    private Produit product;
+    private Produit product = new Produit("Breakfast",9,"Un bon dejeuner", R.drawable.vegetable,5);
 
     private int chosenQuantite;
     private Panier panier;
@@ -29,11 +29,11 @@ public class DescriptionPage extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_description_page);
 
         Intent intent = getIntent();
-        product = (Produit) intent.getSerializableExtra("product");
+        //product = (Produit) intent.getSerializableExtra("product");
         panier = (Panier) intent.getSerializableExtra("panier");
 
         //for testing
-        product = new Produit("Breakfast",5,"Un bon dejeuner", R.drawable.vegetable,5);
+
 
 
         binding.setProduct(product);
@@ -60,6 +60,7 @@ public class DescriptionPage extends AppCompatActivity {
     public void onBuyButtonClick(View view) {
         if (chosenQuantite > 0 && chosenQuantite <= product.getQuantite()) {
             panier.ajouterProduit(product,chosenQuantite);
+            product.setQuantite(product.getQuantite()-chosenQuantite);
             Intent intent = new Intent(this, MenuPage.class);
             intent.putExtra("source","desc");
             intent.putExtra("panier",panier);

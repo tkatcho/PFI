@@ -19,10 +19,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!-- Product Image -->
-
-        <!-- Product Name -->
-
         <Button
             android:id="@+id/buyButton"
             android:layout_width="wrap_content"
@@ -51,19 +47,13 @@
             android:layout_width="match_parent"
             android:layout_height="108dp"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="0dp"
+            android:layout_marginTop="6dp"
             android:fontFamily="@font/stardew_font"
             android:gravity="center"
             android:text="@{product.nom}"
             android:textColor="#FBFBFB"
             android:textSize="60sp"
             tools:layout_height="50sp" />
-
-        <!-- Product Description (You can customize the layout) -->
-
-        <!-- Quantity Input -->
-
-        <!-- Buy Button -->
 
         <TextView
             android:id="@+id/productDescriptionTextView"
@@ -83,8 +73,8 @@
             android:layout_height="80sp"
             android:layout_below="@+id/productDescriptionTextView"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="146dp"
-            android:layout_marginTop="43dp"
+            android:layout_marginStart="49dp"
+            android:layout_marginTop="45dp"
             android:background="#604A4A"
             android:fontFamily="@font/stardew_font"
             android:gravity="center"
@@ -95,5 +85,36 @@
             android:textColor="#F4F2F2"
             android:textSize="30sp" />
 
+        <!-- Product Price -->
+
+        <TextView
+            android:id="@+id/productPriceView"
+            android:layout_width="66dp"
+            android:layout_height="47dp"
+            android:layout_below="@+id/productDescriptionTextView"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="61dp"
+            android:layout_toEndOf="@+id/prix"
+            android:background="#0E0E0E"
+            android:fontFamily="@font/stardew_font"
+            android:gravity="center"
+            android:text="@{product.prix2}"
+            android:textColor="#F6F6F6"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/prix"
+            android:layout_width="66dp"
+            android:layout_height="47dp"
+            android:layout_below="@+id/productDescriptionTextView"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="61dp"
+            android:layout_toEndOf="@+id/quantityEditText"
+            android:background="#000000"
+            android:fontFamily="@font/stardew_font"
+            android:gravity="center"
+            android:text="Prix"
+            android:textColor="#F6F6F6"
+            android:textSize="24sp" />
     </RelativeLayout>
 </layout>

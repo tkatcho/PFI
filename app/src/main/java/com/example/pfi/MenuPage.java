@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -16,13 +17,14 @@ import android.widget.Toast;
 
 import com.example.pfi.classes.Panier;
 import com.example.pfi.classes.Produit;
+import com.example.pfi.classes.User;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MenuPage extends AppCompatActivity {
     Panier panier = new Panier();
-
+    MediaPlayer mp;
     List<Produit> produitList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +32,9 @@ public class MenuPage extends AppCompatActivity {
         setContentView(R.layout.activity_menu_page);
 
         RecyclerView RecyclerView = findViewById(R.id.recycler);
-
+        mp = MediaPlayer.create(this, R.raw.christmassong);
+        mp.stop();
+        mp.start();
         Intent intent = getIntent();
 
         if(intent!=null){
@@ -87,8 +91,10 @@ public class MenuPage extends AppCompatActivity {
     }
     public void Buy(View view){
         Intent intent = new Intent(this, PanierPageActivity.class);
+        User user = new User("tk","tk",10);
+        mp.stop();
         intent.putExtra("panier",panier);
-        intent.putExtra("user","userAMettre");
+        intent.putExtra("user",user);
         startActivity(intent);
     }
 }
