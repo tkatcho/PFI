@@ -33,7 +33,7 @@ public class MenuPage extends AppCompatActivity {
 
         RecyclerView RecyclerView = findViewById(R.id.recycler);
         mp = MediaPlayer.create(this, R.raw.christmassong);
-        mp.stop();
+        //mp.stop();
         mp.start();
         Intent intent = getIntent();
 
@@ -44,6 +44,8 @@ public class MenuPage extends AppCompatActivity {
                 Toast.makeText(this,"recu le panier",Toast.LENGTH_LONG).show();
             }
         }
+
+
         initializeProducts();
         RecyclerView.setLayoutManager(new LinearLayoutManager(this));
         RecyclerView.setAdapter(new Adapter(this, produitList));

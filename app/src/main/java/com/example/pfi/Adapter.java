@@ -15,7 +15,7 @@ import com.example.pfi.classes.ViewHolder;
 import java.util.List;
 
 /**
- * Classe pour créer l'adapter
+ * Classe pour créer l'adapter de mon RecyclerView
  */
 public class Adapter extends RecyclerView.Adapter<ViewHolder> {
 
