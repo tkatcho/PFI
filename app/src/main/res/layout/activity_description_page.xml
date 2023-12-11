@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/stardropsaloon">
     <data>
         <variable
             name="product"
@@ -22,52 +23,77 @@
 
         <!-- Product Name -->
 
-        <ImageView
-            android:id="@+id/productImageView"
-            android:layout_width="113dp"
-            android:layout_height="111dp"
-            android:layout_alignBottom="@+id/buyButton"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="146dp"
-            android:layout_marginBottom="-283dp"
-            android:scaleType="fitCenter"
-            app:imageResource="@{product.imagePath}"/>
-
-        <TextView
-            android:id="@+id/productNameTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{product.nom}" />
-
-        <!-- Product Description (You can customize the layout) -->
-        <TextView
-            android:id="@+id/productDescriptionTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/productNameTextView"
-            android:text="@{product.description}" />
-
-        <!-- Quantity Input -->
-        <EditText
-            android:id="@+id/quantityEditText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/productDescriptionTextView"
-            android:layout_marginTop="16dp"
-            android:hint="Quantity"
-            android:inputType="number"
-            android:minHeight="48dp"
-            android:text="@={quantityInput}" />
-
-        <!-- Buy Button -->
         <Button
             android:id="@+id/buyButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/quantityEditText"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"
-            android:text="Buy"
-            android:onClick="onBuyButtonClick" />
+            android:layout_below="@+id/quantityEditText"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="163dp"
+            android:layout_marginTop="61dp"
+            android:layout_marginEnd="0dp"
+            android:onClick="onBuyButtonClick"
+            android:text="Buy" />
+
+        <ImageView
+            android:id="@+id/productImageView"
+            android:layout_width="161dp"
+            android:layout_height="159dp"
+            android:layout_below="@+id/productNameTextView"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="38dp"
+            android:layout_marginEnd="126dp"
+            android:scaleType="fitCenter"
+            app:imageResource="@{product.imagePath}" />
+
+        <TextView
+            android:id="@+id/productNameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="108dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="0dp"
+            android:fontFamily="@font/stardew_font"
+            android:gravity="center"
+            android:text="@{product.nom}"
+            android:textColor="#FBFBFB"
+            android:textSize="60sp"
+            tools:layout_height="50sp" />
+
+        <!-- Product Description (You can customize the layout) -->
+
+        <!-- Quantity Input -->
+
+        <!-- Buy Button -->
+
+        <TextView
+            android:id="@+id/productDescriptionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="78dp"
+            android:layout_below="@+id/productImageView"
+            android:layout_marginTop="37dp"
+            android:fontFamily="@font/stardew_font"
+            android:gravity="center"
+            android:text="@{product.description}"
+            android:textColor="#F8F4F4"
+            android:textSize="40sp" />
+
+        <EditText
+            android:id="@+id/quantityEditText"
+            android:layout_width="120sp"
+            android:layout_height="80sp"
+            android:layout_below="@+id/productDescriptionTextView"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="146dp"
+            android:layout_marginTop="43dp"
+            android:background="#604A4A"
+            android:fontFamily="@font/stardew_font"
+            android:gravity="center"
+            android:hint="Quantity"
+            android:inputType="number"
+            android:minHeight="60sp"
+            android:text="@={quantityInput}"
+            android:textColor="#F4F2F2"
+            android:textSize="30sp" />
+
     </RelativeLayout>
 </layout>
