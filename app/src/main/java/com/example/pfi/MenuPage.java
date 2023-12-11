@@ -1,17 +1,12 @@
 package com.example.pfi;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
-import android.widget.TextView;
 
 import com.example.pfi.classes.Panier;
 import com.example.pfi.classes.Produit;
@@ -23,23 +18,29 @@ public class MenuPage extends AppCompatActivity {
     Panier panier = new Panier();
 
     List<Produit> produitList = new ArrayList<>();
+
+    /**
+     * initialise le RecyclerView et la liste de produit
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_page);
 
-        RecyclerView RecyclerView = findViewById(R.id.recycler);
-
-        List<Produit> items =  new ArrayList<Produit>();
-        items.add(new Produit("Breakfast",2,"description",R.drawable.breakfast,1)); // for now
+        RecyclerView recyclerView = findViewById(R.id.recycler);
 
 
-        RecyclerView.setLayoutManager(new LinearLayoutManager(this));
-       // RecyclerView.setAdapter(new Adapter(getApplicationContext(),)); // possible erreur
+        initializeProducts();
+
+       recyclerView.setLayoutManager(new LinearLayoutManager(this));
+       recyclerView.setAdapter(new Adapter(getApplicationContext(), produitList));
     }
 
 
-
+    /**
+     * Initialise tout les produits dans la liste produitList
+     */
     private void initializeProducts(){
         produitList.add(new Produit("Breakfast",5,"Un bon dejeuner",R.drawable.breakfast,5));
         produitList.add(new Produit("Fish",10,"Poisson fraichement ceuilli",R.drawable.fish,3));
@@ -56,9 +57,14 @@ public class MenuPage extends AppCompatActivity {
         produitList.add(new Produit("Legumes",10,"Un bon choix vegetarien",R.drawable.vegetable,5));
     }
 
-    public void Buy(View view){
-        Intent intent = new Intent(this, PanierPageActivity.class);
-        intent.putExtra("panier",panier);
-        startActivity(intent);
+    /**
+     * Crée un intent pour l'envoyer à la prochaine page
+     * @param view
+     * // peut être va retourner qqch bc logcat says that there's an error w this class
+     */
+    public int Buy(View view){
+     Intent intent = new Intent(this, PanierPageActivity.class);
+     intent.putExtra("panier",panier);
+     startActivity(intent);
     }
 }
