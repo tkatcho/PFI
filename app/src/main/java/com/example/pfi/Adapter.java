@@ -42,10 +42,10 @@ public class Adapter extends RecyclerView.Adapter<ViewHolder> {
 
 
         holder.nameView.setText(product.getNom());
-        holder.priceView.setText(String.valueOf(product.getPrix())); // Convert int to String
+        holder.priceView.setText(String.valueOf(product.getPrix())); // convertis de int à string
         holder.imageView.setImageResource(product.getImagePath());
 
-        // Set an OnClickListener on the LinearLayout
+
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

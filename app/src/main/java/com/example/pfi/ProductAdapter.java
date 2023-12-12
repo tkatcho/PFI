@@ -45,7 +45,7 @@ public class ProductAdapter extends ArrayAdapter<kotlin.Pair<Produit, Integer>> 
 
         imageView.setImageResource(produit.getImagePath());
         productName.setText(produit.getNom());
-        productPrice.setText(String.valueOf("PRIX:"+produit.getPrix()*quantite));
+        productPrice.setText(String.valueOf("PRICE:"+produit.getPrix()*quantite));
         quantity.setText( "QTY:"+String.valueOf(quantite));
 
         removeButton.setOnClickListener(new View.OnClickListener() {

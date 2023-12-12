@@ -99,12 +99,15 @@ public class MainActivity extends AppCompatActivity {
             if (!enteredPassword.equals("admin")) {
                 errorMessage.setText("Wrong password");
             }
+            if (!enteredUsername.equals("admin") && !enteredPassword.equals("admin")){
+                errorMessage.setText("Wrong login");
+            }
 
         }
         mp.stop();
         Intent intent = new Intent(this, MenuPage.class);
         intent.putExtra("user", "salut");
-        startActivity(intent);
+
     }
     //endregion
 

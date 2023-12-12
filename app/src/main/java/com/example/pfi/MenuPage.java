@@ -41,7 +41,7 @@ public class MenuPage extends AppCompatActivity {
             String sourceActivity = intent.getStringExtra("source");
             if(sourceActivity!=null && sourceActivity.equals("desc")){
                 panier = (Panier) intent.getSerializableExtra("panier");
-                Toast.makeText(this,"recu le panier",Toast.LENGTH_LONG).show();
+                Toast.makeText(this,"in the basket!",Toast.LENGTH_LONG).show();
             }
         }
 
@@ -53,31 +53,40 @@ public class MenuPage extends AppCompatActivity {
     }
 
 
-
-
-
+    /**
+     * Dans cette classe, nous ajoutons les produits dans produitsList
+     */
     private void initializeProducts(){
-        produitList.add(new Produit("Breakfast",5,"Un bon dejeuner",R.drawable.breakfast,5));
-        produitList.add(new Produit("Fish",10,"Poisson fraichement ceuilli",R.drawable.fish,3));
-        produitList.add(new Produit("Fish Taco",15,"Taco poisson",R.drawable.fishtaco,1));
-        produitList.add(new Produit("Calimar fri",10,"Amazing calmari straight from the waters of the artic ocean",R.drawable.friedcalimari,5));
-        produitList.add(new Produit("Choix du chef",10,"Pense tu etre chanceux aujourd'hui?",R.drawable.luckylunch,2));
-        produitList.add(new Produit("Choix du travailleur",5,"Un bon dejeuner",R.drawable.minerstreat,5));
-        produitList.add(new Produit("Pancakes",10,"Recouvert de nutella, creme et fraises",R.drawable.pancakes,5));
-        produitList.add(new Produit("PepperPoppers",4,"Excellent entrer",R.drawable.pepperpoppers,5));
-        produitList.add(new Produit("Pie",12,"Une bonne tarte au pommes",R.drawable.pie,5));
-        produitList.add(new Produit("Gateau rose",30,"Un gateau pour une occasion speciale",R.drawable.pinkcake,2));
-        produitList.add(new Produit("Red hot challenge",10,"Un menu qui brulera votre langue",R.drawable.spicy,5));
-        produitList.add(new Produit("Burger",10,"Un bon burger ordinaire",R.drawable.survivalburger,5));
-        produitList.add(new Produit("Legumes",10,"Un bon choix vegetarien",R.drawable.vegetable,5));
+        produitList.add(new Produit("Breakfast",5,"A good breakfast!",R.drawable.breakfast,5));
+        produitList.add(new Produit("Fish",10,"Fresh fish",R.drawable.fish,3));
+        produitList.add(new Produit("Fish Taco",15,"Delicious fish taco",R.drawable.fishtaco,1));
+        produitList.add(new Produit("Calmar fri",10,"Amazing calmar straight from the waters of the artic ocean",R.drawable.friedcalimari,5));
+        produitList.add(new Produit("Chef's choice",10,"Are you lucky today?",R.drawable.luckylunch,2));
+        produitList.add(new Produit("Worker's choice",5,"A delicicous breakfast",R.drawable.minerstreat,5));
+        produitList.add(new Produit("Pancakes",10,"Covered with nutella, cream and strawberries",R.drawable.pancakes,5));
+        produitList.add(new Produit("PepperPoppers",4,"Excellent appetizer",R.drawable.pepperpoppers,5));
+        produitList.add(new Produit("Pie",12,"A delicious apple pie",R.drawable.pie,5));
+        produitList.add(new Produit("Pink cake",30,"A special cake for a special occasion!",R.drawable.pinkcake,2));
+        produitList.add(new Produit("Red hot challenge",10,"This one will burn your tongue!",R.drawable.spicy,5));
+        produitList.add(new Produit("Burger",10,"A good ordinary burger",R.drawable.survivalburger,5));
+        produitList.add(new Produit("Veggie",10,"A good vegetarian choice!",R.drawable.vegetable,5));
     }
 
+    /**
+     *classe qui emmène l'usager vers la page de description
+     * @param view
+     */
     public void description(View view){
         Intent intent = new Intent(this, DescriptionPage.class);
         intent.putExtra("panier",panier);
-        //intent.putExtra("produit","produitAMettre");
+        intent.putExtra("produit","produitAMettre");
         startActivity(intent);
     }
+
+    /**
+     * classe qui va emmener l'usager vers la page du panier
+     * @param view
+     */
     public void Buy(View view){
         Intent intent = new Intent(this, PanierPageActivity.class);
         User user = new User("tk","tk",10);

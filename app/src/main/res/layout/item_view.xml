@@ -35,10 +35,9 @@
     <LinearLayout
         android:id="@+id/linear"
         android:layout_width="match_parent"
-        android:layout_height="2dp"
+        android:layout_height="wrap_content"
         android:layout_below="@id/imageView"
         android:layout_marginTop="10dp"
         android:background="#03A9F4"
         android:onClick="Description" />
-
 </RelativeLayout>

@@ -1,9 +1,15 @@
 <resources>
     // main page
     <string name="app_name">Stardew Valley Resto</string>
-    <string name="hint_username" > username</string>
-    <string name="hint_password" > password</string>
+    <string name="username" > username</string>
+    <string name="password" > password</string>
+    <string name="loginButton"> Login</string>
 
     //page du panier
+    <string name="button">Description</string>
+    <string name="button2">Go to basket</string>
+    // je sais comment le faire pour le recycler view et je n'arrive pas à trouver le strings.xml (fr)
+    // j'ai crée le ressource directory...
+
 
 </resources>

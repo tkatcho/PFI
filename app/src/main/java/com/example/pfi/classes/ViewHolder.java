@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.pfi.R;
 
 /**
- * Classe qui initialise les Views et layout du recycler view
+ * Classe qui initialise les Views et layout du recycler view (ViewHolder)
  */
 public class ViewHolder extends RecyclerView.ViewHolder {
 

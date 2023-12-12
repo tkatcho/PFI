@@ -61,8 +61,8 @@ public class Produit implements Serializable {
     @Override
     public String toString() {
         return "Produit{" +
-                "nom='" + nom + '\'' +
-                ", prix=" + prix +
+                "name='" + nom + '\'' +
+                ", price=" + prix +
                 '}';
     }
 
